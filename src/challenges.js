@@ -119,21 +119,22 @@ function decode(frase) {
   let arrayResultado = [];
 
   for(let index of array){
-    if(index !== 1 && index !== 2 && index !== 3 && index !== 4 && index !== 5){
+    if(index !== '1' && index !== '2' && index !== '3' && index !== '4' && index !== '5'){
       arrayResultado.push(index);
-    }else if(index === 1){
+    }else if(index === '1'){
       arrayResultado.push('a');
-    }else if(index === 2){
+    }else if(index === '2'){
       arrayResultado.push('e');
-    }else if(index === 3){
+    }else if(index === '3'){
       arrayResultado.push('i');
-    }else if(index === 4){
+    }else if(index === '4'){
       arrayResultado.push('o');
-    }else if(index === 5){
+    }else if(index === '5'){
       arrayResultado.push('u');
     }
   }
   return arrayResultado.join('');
+}
 
 
 // Desafio 10
