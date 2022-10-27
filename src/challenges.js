@@ -124,17 +124,17 @@ function decode(frase) {
     }else if(index === 1){
       arrayResultado.push('a');
     }else if(index === 2){
-      arrayResultado.push('b');
-    }else if(index === 3){
-      arrayResultado.push('c');
-    }else if(index === 4){
-      arrayResultado.push('d');
-    }else if(index === 5){
       arrayResultado.push('e');
+    }else if(index === 3){
+      arrayResultado.push('i');
+    }else if(index === 4){
+      arrayResultado.push('o');
+    }else if(index === 5){
+      arrayResultado.push('u');
     }
   }
   return arrayResultado.join('');
-}
+
 
 // Desafio 10
 function techList() {
