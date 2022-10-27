@@ -51,15 +51,16 @@ function highestCount() {
 }
 
 // Desafio 7
+
 function catAndMouse(mouse,cat1,cat2) {
   let distanciaCat1 = cat1 - mouse;
   let distanciaCat2 = cat2 - mouse;
   let resultado = '';
 
   if(distanciaCat1 <0){
-    distanciaCat1 = Math.abs(distanciaCat1);
+    distanciaCat1 = Math.abs(distanciaCat1); //pesquisa: Math.abs recebe um número e retorna o valor absoluto dele
   }else if(distanciaCat2 <0){
-    distanciaCat2 = Math.abs(distanciaCat2);
+    distanciaCat2 = Math.abs(distanciaCat2); //pesquisa: Math.abs recebe um número e retorna o valor absoluto dele
   }
   
   if(distanciaCat1 < distanciaCat2){
