@@ -30,8 +30,11 @@ function splitSentence(frase) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(array) {
+  let primeiro = array[0];
+  let indiceUltimo = array.length -1;
+  let ultimo = array[indiceUltimo];
+  return ultimo + "," + " " + primeiro;
 }
 
 // Desafio 5
