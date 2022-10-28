@@ -139,9 +139,37 @@ function decode(frase) {
 
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+// pesquisa: utilizar o sort para ordenar um array de objetos https://www.horadecodar.com.br/2021/01/11/como-ordenar-um-array-de-objetos-em-javascript/
+
+function techList(array,string) {
+  let arrayFinal;
+
+  if(array.length == []){
+    arrayFinal= "Vazio!";
+  }
+
+  arrayFinal = [];
+
+for(i=0; i<array.length; i=i+1){
+  if(i >= 0){
+    let indice = array[i];
+    arrayFinal.push({tech: indice, name: string});
+    }
+  }
+
+arrayFinal.sort(function(a,b){
+  if(a.tech < b.tech){
+    return -1;
+  }else{
+    return true;
+  }
+})
+
+return arrayFinal
 }
+
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'],'Lucas'))
+
 
 module.exports = {
   calcArea,
