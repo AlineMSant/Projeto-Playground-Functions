@@ -13,6 +13,10 @@ function hydrate() {
   // seu código aqui
 }
 
+
+let index = 20;
+console.log(index);
+
 module.exports = {
   generatePhoneNumber,
   hydrate,
