@@ -59,7 +59,6 @@ if(somaUm >=3 || somaDois >= 3 || somaTres >= 3 || somaQuatro >= 3 || somaCinco 
 return retorno;
 }
 
-console.log(generatePhoneNumber([0,2,3,4,4,2,7,8,9,9,4]));
 
 // Desafio 12
 function triangleCheck(lineA,lineB,lineC) {
@@ -68,7 +67,7 @@ function triangleCheck(lineA,lineB,lineC) {
   let subBA = lineB - lineA;
   let subBC = lineB - lineC;
   let subCB = lineC - lineB;
-  let subCA = lineC - lineB;
+  let subCA = lineC - lineA;
 
   if(subAB < 0){
     subAB = Math.abs(subAB);  
@@ -91,36 +90,27 @@ function triangleCheck(lineA,lineB,lineC) {
 
   let resposta;
 
-  switch (lineA,lineB,lineC) {
-    case (lineA < (lineB + lineC) || lineB < (lineC + lineA) || lineC < (lineB + lineA)):
-    case (lineA < (lineB + lineC) && lineA > subBC):
-      resposta = true;
-      break;
-    case  (lineA < (lineB + lineC) || lineB < (lineC + lineA) || lineC < (lineB + lineA)):
-    case (lineA < (lineC + lineB) && lineA > subCB):
-      resposta = true;
-      break;
-    case (lineA < (lineB + lineC) || lineB < (lineC + lineA) || lineC < (lineB + lineA)):
-    case (lineB < (lineA + lineC) && lineB > subAC):
-      resposta = true;
-      break;
-    case (lineA < (lineB + lineC) || lineB < (lineC + lineA) || lineC < (lineB + lineA)):
-    case (lineB < (lineC + lineA) && lineB > subCA):
-      resposta = true;
-      break;
-    case  (lineA < (lineB + lineC) || lineB < (lineC + lineA) || lineC < (lineB + lineA)):
-    case (lineC < (lineB + lineA) && lineC > subBA):
-      resposta = true;
-      break;
-    case  (lineA < (lineB + lineC) || lineB < (lineC + lineA) || lineC < (lineB + lineA)):
-    case (lineC < (lineA + lineB) && lineC > subAB):
-      resposta = true;
-      break;
-  default:
+  if((lineA < (lineB + lineC) && lineA > subBC) || (lineA < (lineB + lineC) && lineB < (lineC + lineA) && lineC < (lineB + lineA))){
+    resposta = true;
+    }else if((lineA < (lineC + lineB) && lineA > subCB) || (lineA < (lineB + lineC) && lineB < (lineC + lineA) && lineC < (lineB + lineA))){
+    resposta = true;
+    }else if((lineB < (lineA + lineC) && lineB > subAC) || (lineA < (lineB + lineC) && lineB < (lineC + lineA) && lineC < (lineB + lineA))){
+    resposta = true;
+    }else if((lineB < (lineC + lineA) && lineB > subCA) || (lineA < (lineB + lineC) && lineB < (lineC + lineA) && lineC < (lineB + lineA))){
+    resposta = true;
+    }else if((lineC < (lineA + lineB) && lineC > subAB) || (lineA < (lineB + lineC) && lineB < (lineC + lineA) && lineC < (lineB + lineA))){
+    resposta = true;
+    }else if((lineC < (lineB + lineA) && lineC > subBA) || (lineA < (lineB + lineC) && lineB < (lineC + lineA) && lineC < (lineB + lineA))){
+    resposta = true;
+    }else{
     resposta = false;
-  }
+    }
+
   return resposta;
 }
+
+console.log(triangleCheck(21,10,10));
+
 
 // Desafio 13
 function hydrate(string) {
