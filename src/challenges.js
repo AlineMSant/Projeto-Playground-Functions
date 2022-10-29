@@ -157,21 +157,23 @@ function decode(frase) {
 
 function techList(array,string) {
   let arrayFinal;
+  let outraArray = [];
 
-  if(array.length == []){
+  if(array.length == 0){
     arrayFinal= "Vazio!";
+  }else{
+    arrayFinal = outraArray;
   }
 
-  arrayFinal = [];
 
 for(i=0; i<array.length; i=i+1){
   if(i >= 0){
     let indice = array[i];
-    arrayFinal.push({tech: indice, name: string});
+    outraArray.push({tech: indice, name: string});
     }
   }
 
-arrayFinal.sort(function(a,b){
+outraArray.sort(function(a,b){
   if(a.tech < b.tech){
     return -1;
   }else{
@@ -182,7 +184,8 @@ arrayFinal.sort(function(a,b){
 return arrayFinal
 }
 
-// console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'],'Lucas'))
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'],'Lucas'))
+console.log(techList([],'Lucas'))
 
 
 module.exports = {
